@@ -1,13 +1,18 @@
 const skillGroups = [
   {
-    category: 'Programming Languages',
+    category: 'Programming & Scripting',
     icon: '💻',
-    skills: ['Java', 'JavaScript', 'Python', 'PHP'],
+    skills: ['Java', 'JavaScript', 'Python', 'PHP', 'REST APIs', 'JSON Data Exchange'],
   },
   {
-    category: 'Frameworks',
+    category: 'Frameworks & Backend',
     icon: '⚙️',
-    skills: ['Spring Boot', 'Spring MVC', 'Spring Data JPA', 'Hibernate', 'Angular', 'React'],
+    skills: ['Spring Boot', 'Spring MVC', 'Spring Data JPA', 'Hibernate'],
+  },
+  {
+    category: 'Frontend & Web',
+    icon: '🎨',
+    skills: ['Angular', 'React', 'HTML', 'CSS', 'Tailwind CSS', 'JavaScript'],
   },
   {
     category: 'Databases',
@@ -17,12 +22,12 @@ const skillGroups = [
   {
     category: 'Cloud & DevOps',
     icon: '☁️',
-    skills: ['AWS (Certified)', 'Azure (Certified)', 'REST APIs', 'GitHub', 'Agile/Scrum'],
+    skills: ['AWS (Certified)', 'Azure (Certified)', 'GitHub', 'Deployment Concepts', 'Agile / Scrum'],
   },
   {
-    category: 'Tools',
+    category: 'Tools & Platforms',
     icon: '🛠️',
-    skills: ['Postman', 'Maven', 'Eclipse', 'STS', 'VS Code', 'Apache Tomcat'],
+    skills: ['Postman', 'Maven', 'Eclipse', 'STS', 'VS Code', 'Apache Tomcat', 'Debugging', 'API Testing'],
   },
 ];
 
@@ -32,7 +37,7 @@ export default function Skills() {
       <div className="container">
         <span className="section-tag">What I know</span>
         <h2 className="section-title">Technical Skills</h2>
-        <p className="section-sub">A full-stack skill set with a strong backend focus.</p>
+        <p className="section-sub">Full-stack skill set with a strong backend and cloud focus.</p>
 
         <div style={{
           display: 'grid',
@@ -40,28 +45,46 @@ export default function Skills() {
           gap: '1.25rem',
         }}>
           {skillGroups.map(({ category, icon, skills }) => (
-            <div key={category}
+            <div
+              key={category}
               style={{
-                background: 'var(--card)', border: '1px solid var(--border)',
-                borderRadius: 'var(--radius)', padding: '1.5rem',
-                boxShadow: 'var(--shadow)', transition: 'all 0.25s',
+                background: 'var(--card)',
+                border: '1px solid var(--border)',
+                borderRadius: 'var(--radius)',
+                padding: '1.5rem',
+                boxShadow: 'var(--shadow)',
+                transition: 'all 0.25s',
               }}
-              onMouseEnter={e => { e.currentTarget.style.boxShadow = 'var(--shadow-hover)'; e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.transform = 'translateY(-4px)'; }}
-              onMouseLeave={e => { e.currentTarget.style.boxShadow = 'var(--shadow)'; e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'translateY(0)'; }}
+              onMouseEnter={e => {
+                e.currentTarget.style.boxShadow = 'var(--shadow-hover)';
+                e.currentTarget.style.borderColor = 'var(--accent)';
+                e.currentTarget.style.transform = 'translateY(-4px)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.boxShadow = 'var(--shadow)';
+                e.currentTarget.style.borderColor = 'var(--border)';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
             >
               <div style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>{icon}</div>
               <div style={{
-                fontSize: '0.72rem', fontFamily: 'var(--mono)',
-                color: 'var(--accent)', letterSpacing: '0.08em',
-                textTransform: 'uppercase', marginBottom: '0.85rem',
+                fontSize: '0.72rem',
+                fontFamily: 'var(--mono)',
+                color: 'var(--accent)',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                marginBottom: '0.85rem',
+                fontWeight: 600,
               }}>
                 {category}
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
                 {skills.map(s => (
                   <span key={s} style={{
-                    fontSize: '0.78rem', padding: '0.25rem 0.65rem',
-                    background: 'var(--bg3)', borderRadius: 6,
+                    fontSize: '0.78rem',
+                    padding: '0.25rem 0.65rem',
+                    background: 'var(--bg3)',
+                    borderRadius: 6,
                     color: 'var(--text2)',
                   }}>
                     {s}

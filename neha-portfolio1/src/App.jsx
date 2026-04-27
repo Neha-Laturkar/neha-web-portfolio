@@ -36,7 +36,7 @@ function App() {
         color: 'var(--text3)', fontSize: '0.82rem',
         fontFamily: 'var(--mono)'
       }}>
-        © 2026 Neha Sutar · Built with React · Norwich, UK
+        © 2026 Neha R Sutar · Built with React · Norwich, UK
       </footer>
     </div>
   );

@@ -1,4 +1,4 @@
-import { FiGithub, FiExternalLink } from 'react-icons/fi';
+import { FiGithub } from 'react-icons/fi';git
 
 const projects = [
   {
